@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 
-public class Book {
+public abstract class Book {
     String bookID;
     String tittle;
     String author;

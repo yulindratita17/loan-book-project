@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 
-public class BookForLoan extends Book {
+public abstract class BookForLoan extends Book {
     double bookLoanPrice;
     int stock;
 }
