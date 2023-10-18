@@ -2,7 +2,9 @@ package com.project.loanbook.services;
 
 import java.util.List;
 
-import com.project.loanbook.abstracts.BookForLoan;
+import com.project.loanbook.models.BookForLoan;
+import com.project.loanbook.models.LoanBookOrder;
+import com.project.loanbook.models.Member;
 
 public class PrintService {
     public static void printMenu(String title, String[] listMenu) {
@@ -35,6 +37,40 @@ public class PrintService {
 
         for (BookForLoan bookForLoan : listBook) {
             System.out.printf(formatTabel, num, bookForLoan.getBookID(), bookForLoan.getTittle(), bookForLoan.getAuthor(), bookForLoan.getStock());
+            num++;
+        }
+        System.out.println("====================================================================================================\n");
+
+    }
+
+    public static void printDataLoanBook(String tittle, List<LoanBookOrder> listBook) {
+        int num = 1;
+        String formatTabel = "| %-4s | %-10s | %-15s | %-10s | %-45s | %-15s | %-15s | %-8s |%n";
+        System.out.println("\n===================================================================================================================================================");
+        System.out.printf("| %-143s |%n", tittle);
+        System.out.println("===================================================================================================================================================");
+        System.out.printf(formatTabel, "No", "Loan ID", "Member Name", "Book ID", "Tittle", "Loan Book Price", "Loan Duration", "Loan Fee");
+        System.out.println("===================================================================================================================================================");
+
+        for (LoanBookOrder loanBookOrder : listBook) {
+            System.out.printf(formatTabel, num, loanBookOrder.getLoanID(), loanBookOrder.getMember().getMemberName(), loanBookOrder.getLoanBook().getBookID(), loanBookOrder.getLoanBook().getTittle(), loanBookOrder.getLoanBook().getBookLoanPrice(), loanBookOrder.getLoanDuration(), loanBookOrder.getLoanFee());
+            num++;
+        }
+        System.out.println("===================================================================================================================================================\n");
+
+    }
+
+    public static void printDataMember(String tittle, List<Member> listMember) {
+        int num = 1;
+        String formatTabel = "| %-4s | %-10s | %-15s | %-15s |%n";
+        System.out.println("\n====================================================================================================");
+        System.out.printf("| %-96s |%n", tittle);
+        System.out.println("====================================================================================================");
+        System.out.printf(formatTabel, "No", "Member ID", "Member Name", "Address");
+        System.out.println("====================================================================================================");
+
+        for (Member member : listMember) {
+            System.out.printf(formatTabel, num, member.getMemberID(), member.getMemberName(), member.getAddress());
             num++;
         }
         System.out.println("====================================================================================================\n");

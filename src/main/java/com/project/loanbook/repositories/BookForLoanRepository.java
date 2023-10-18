@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
-import com.project.loanbook.abstracts.BookForLoan;
+import com.project.loanbook.models.BookForLoan;
 import com.project.loanbook.models.Comic;
 import com.project.loanbook.models.Novel;
 

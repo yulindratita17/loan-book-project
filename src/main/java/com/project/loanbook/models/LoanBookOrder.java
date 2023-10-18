@@ -1,7 +1,5 @@
 package com.project.loanbook.models;
 
-import com.project.loanbook.abstracts.BookForLoan;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

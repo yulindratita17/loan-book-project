@@ -1,7 +1,5 @@
 package com.project.loanbook.models;
 
-import com.project.loanbook.abstracts.BookForLoan;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,4 +14,13 @@ import lombok.experimental.SuperBuilder;
 
 public class Novel extends BookForLoan{
     boolean isSeries;
+
+    @Override
+    public void calculatePriceLoan() {
+        // TODO Auto-generated method stub
+        super.calculatePriceLoan();
+        double ratesBook = 0.05;
+
+        setBookLoanPrice(getBookLoanPrice() * ratesBook);
+    }
 }
